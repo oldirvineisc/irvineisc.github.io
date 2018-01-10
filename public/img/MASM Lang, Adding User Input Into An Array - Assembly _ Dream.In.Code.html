@@ -1,0 +1,2167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <title>MASM Lang, Adding User Input Into An Array - Assembly | Dream.In.Code</title>
+    
+	
+	<meta name="keywords" content="MASM,lang,adding,user,input,into,array,have,created,code,but,dont,understand,how,add,element,Can,someone,explain,doing" />
+	
+
+	<meta name="description" content="MASM lang, adding user input into an array: " />
+	
+
+	<meta name="identifier-url" content="http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/" />
+	
+
+	
+		
+			
+			
+			
+			
+				<link rel="canonical" href="http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/" />
+			
+		
+
+			
+			
+			
+			
+				<link rel='up' href='http://www.dreamincode.net/forums/forum/112-assembly/' />
+			
+		
+
+			
+			
+			
+			
+				<link rel='author' href='http://www.dreamincode.net/forums/user/385210-techdee/' />
+			
+		
+	
+
+		
+			
+			
+				<link rel="alternate feed" type="application/rss+xml" title="Programming Forums" href="http://www.dreamincode.net/forums/rss/forums/1-programming-forums/" />
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate feed" type="application/rss+xml" title="Dream.In.Code Blogs RSS feed" href="http://www.dreamincode.net/forums/rss/blog/" />
+			
+			
+			
+		
+	
+
+	
+				
+			<link rel="stylesheet" type="text/css"  href="http://www.dreamincode.net/forums/public/style_css/css_8/awards.css?v=57" />
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="http://www.dreamincode.net/forums/public/style_css/css_8/calendar_select.css?v=57" />
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" media="print" href="http://www.dreamincode.net/forums/public/style_css/css_8/ipb_print.css?v=57" />
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="http://www.dreamincode.net/forums/public/style_css/css_8/ipb_editor.css?v=57" />
+		
+	
+
+				
+			<link rel="stylesheet" type="text/css" title="Main" media="screen" href="http://www.dreamincode.net/forums/public/style_css/css_8/ipb_styles.css?v=57" />
+		
+	
+	
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://cdn.dreamincode.net/forums/public/style_css/css_8/ipb_ie.css?v=58" />
+<![endif]-->
+    <!--included content-->
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/home/favicon.ico"/>
+	<link rel="alternate" title="dream.in.code Forums" href="/rss/featured.php" type="application/rss+xml"/>
+	<link type="text/css" rel="stylesheet" href="http://cdn.dreamincode.net/home/templates2/styles_7.css?v=17"/>
+	<link rel="stylesheet" href="http://cdn.dreamincode.net/home/templates2/google_cse.css?v=2" type="text/css" />
+	<link rel="stylesheet" href="http://cdn.dreamincode.net/search/thickbox.css" type="text/css" />
+	<meta property="fb:page_id" content="62219401412" />
+
+	<!-- OLD LAYOUT -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		jQuery.noConflict();
+		</script>
+		<script type="text/javascript">
+		  //<![CDATA[
+		  function loginToggle() {
+			var target = document.getElementById("login").getElementsByTagName("div")[0];
+			!target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+			}
+		  //]]>
+		</script>  
+<!-- 		<script type="text/javascript">
+		function utmx_section(){}function utmx(){}
+		(function(){var k='2514943763',d=document,l=d.location,c=d.cookie;function f(n){
+		if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.indexOf(';',i);return escape(c.substring(i+n.
+		length+1,j<0?c.length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;
+		d.write('<sc'+'ript src="'+
+		'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com'
+		+'/siteopt.js?v=1&utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='
+		+new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+		'" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
+		</script>
+ -->
+
+<!-- 
+	<link type="text/css" rel="stylesheet" href="http://cdn.dreamincode.net/syntax/SyntaxHighlighter.css"></link>
+	<script language="javascript" src="http://cdn.dreamincode.net/syntax/shCore.js"></script>
+
+	<link href="http://cdn.dreamincode.net/syntax/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://cdn.dreamincode.net/syntax/prettify.js"></script>
+-->
+<!-- 	
+	<link href="http://cdn.dreamincode.net/forums/public/style_css/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://cdn.dreamincode.net/forums/public/js/3rd_party/prettify/prettify.js"></script>
+
+ -->
+
+
+	
+<!-- Google Website Optimizer Control Script -->
+<!-- End of Google Website Optimizer Control Script -->
+
+<script type='text/javascript'>
+(function() {
+var useSSL = 'https:' == document.location.protocol;
+var src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.defineSlot('/1014587/DIC_728x90_Header_Default', [728, 90], 'div-gpt-ad-1326943007260-5').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_300x250_FirstPost_Default', [300, 250], 'div-gpt-ad-1326943007260-1').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_336x280_Footer_Default', [336, 280], 'div-gpt-ad-1326943007260-4').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_300x250_TopCenter_Default', [300, 250], 'div-gpt-ad-1326943007260-2').addService(googletag.pubads());
+googletag.defineSlot('/1014587/DIC_160x600_Left_Default', [160, 600], 'div-gpt-ad-1326943007260-0').addService(googletag.pubads());
+googletag.pubads().enableSyncRendering();
+googletag.enableServices();
+</script>
+
+<!--/ included content-->
+    <script type='text/javascript'>
+      jsDebug = 0; /* Must come before JS includes */
+      USE_RTE = 0;
+      inACP   = false;
+    </script>
+    
+		<script type='text/javascript' src='http://www.dreamincode.net/forums/public/js/3rd_party/prototype.js'></script>
+	
+	<script type='text/javascript' src='http://www.dreamincode.net/forums/public/js/ipb.js?load=quickpm,editor,topic'></script>
+	
+		<script type='text/javascript' src='http://www.dreamincode.net/forums/public/js/3rd_party/scriptaculous/scriptaculous-cache.js'></script>
+	
+	<script type="text/javascript" src='http://www.dreamincode.net/forums/cache/lang_cache/1/ipb.lang.js' charset='iso-8859-1'></script>
+	
+
+<script type='text/javascript'>
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+
+		
+    <script type='text/javascript'>
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.dreamincode.net/forums/index.php?&';
+		ipb.vars['board_url']			= 'http://www.dreamincode.net/forums';
+		ipb.vars['loading_img'] 		= 'http://cdn.dreamincode.net/forums/public/style_images/DIC/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://www.dreamincode.net/forums/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= 'b6b563148d5aa79d47802929c25ee05d';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= 'dic_';
+		ipb.vars['cookie_domain'] 		= '.dreamincode.net';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://cdn.dreamincode.net/forums/public/style_images/DIC/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://cdn.dreamincode.net/forums/public/style_images/DIC/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://cdn.dreamincode.net/forums/public/style_images/DIC/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.dreamincode.net/forums/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "iso-8859-1";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 1;
+		ipb.vars['image_resize_force']  = 500;
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"\/page__","varSep":"__"};
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Resized to #{percent}% (was #{width} x #{height}) - Click image to enlarge</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Add as Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_add.png' alt='Add as Friend' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Remove Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_delete.png' alt='Remove Friend' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+
+
+ 
+
+
+
+
+    <script type='text/javascript'>
+      Loader.boot();
+    </script>
+
+
+
+
+<style type="text/css">
+pre { overflow: scroll; max-height:500px; background: white; border: 1px solid #66666; padding: 5px; }
+</style>
+
+
+  </head><!--included content-->
+
+
+<!-- <body onload="prettyPrint()"> -->
+ <body itemscope itemtype="http://schema.org/WebPage">
+<!-- TOP.PHP -->
+<!-- 	<div style="width: 99%; border-bottom: 1px solid black; padding: 5px; text-align: center; font-size: 14px; background: #FFFF99; font-weight: bolder;">
+
+		<a href="http://a.lakequincy.com/c.ashx?publisher=112&placement=7639&creative=7182" target="_blank">Turn your Mobile Apps into m-commerce apps – Learn More!</a>
+	</div> -->
+	
+	 
+	 
+	 <!-- <div style="color: white; height: 27px; margin: 0px auto; border-bottom: 0px solid white; padding: 0px; text-align: center; font-size: 14px; background-color: #1B50E0; font-weight: bolder;">
+	<div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="RON" lqm_format="1x6"></div>		
+	</div>  -->
+
+
+
+
+	<div id="header">
+        <h1 id="logo" style="width: 625px;"><a href="/" rel="home"><img alt="&lt;/Dream.In.Code&gt;: Programming &amp; Web Development Community" width="264" height="110" src="http://cdn.dreamincode.net/home/images/logo_2012.gif?v=3"/></a>
+		<!-- <a href="http://ad.doubleclick.net/clk;253234078;66891089;u?http://www.devexpress.com/go/DreamInCode_Touch_88x325.aspx"><img src="http://cdn.dreamincode.net/home/images/DIC_DX_Build_Touch.png" height="88" border="0" style="margin-top: 10px; margin-left: 10px; padding-left: 5px; border-left: 1px solid #F7F7F7;"></a> -->
+		<!--<div style="position: absolute; top: 0px; left: 265px; width: 325px; height: 110px; border-left: 1px solid #F7F7F7; text-indent: 0pt;"><div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="ros" lqm_format="325x110"></div></div>-->
+		</h1>
+  		<!-- 	<div id="leaderboard">
+  					<div style="overflow: hidden; width: 728px; height: 90px;"></div>
+			</div> -->
+
+
+		<div style="height: 110px;">
+		   
+			<div style="padding-top: 30px; padding-right: 10px; float: right;">
+					<!-- google_ad_section_start(weight=ignore) -->		
+						<!-- Google CSE Search Box Begins  -->
+					
+				  <form style="margin: 0pt;" id="cse-search-box">
+
+						<span style="float: left; font-size: 24px; padding-top: 5px; padding-right: 5px; color: white; font-weight: bolder; text-shadow: 1px 1px 1px rgb(0, 0, 0);">Search:</span>
+						<input name="q" id="query" size="18" style="font-size: 20px; margin-top: 5px; border: 1px solid; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px;" value="" type="text"/>
+						<input name="sa" value="Search" style="color: white; background: #303030; font-weight: bolder; border: 1px solid black; margin: 0px 0px 0px 5px; padding: 5px; -moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; position: relative; top: -3px;" type="submit"/>
+
+				  </form>
+					<script type="text/javascript">
+ 					var f = document.getElementById('cse-search-box');
+					var q = f.q;
+					    var b = function() {
+						  if (q.value == '') {
+							q.style.background = '#FFFFFF url(http:\x2F\x2Fwww.google.com\x2Fcse\x2Fintl\x2Fen\x2Fimages\x2Fgoogle_custom_search_watermark.gif) left no-repeat';
+						  }
+						};
+
+						var f = function() {
+						  q.style.background = '#ffffff';
+						};
+						window.onload = b;
+						q.onfocus = f;
+						q.onblur = b;
+
+					</script>
+				  <div style="text-align: right; clear: both;">
+				  <a href="/forums/index.php?app=core&amp;module=search" style="text-decoration: none;"><span style="font-size: 11px; color: rgb(255, 255, 255); font-weight: bold; text-decoration: underline; text-align: right;">Advanced Forum Search</span></a>
+				  </div>
+					<!-- Google CSE code begins -->
+			</div>
+
+		</div>
+
+
+		  <div id="navigation-login-register">
+					<ul class="navigation">
+					  <li class="first"><a href="/forums/">Forums</a></li>
+					  <li>
+			  <a href="/forums/forum/76-programming-help/">Programming</a>          
+			</li>
+					  <li>
+					   <a href="/forums/forum/74-web-development/">Web Development</a>
+
+			</li>
+			<li><a href="/forums/forum/71-computer-support/">Computers</a></li>
+					  <li><a href="/forums/forum/78-programming-tutorials/">Tutorials</a></li>
+					  <li><a href="/forums/forum/205-snippets/">Snippets</a></li>
+					  <li><a href="/forums/?automodule=blog">Dev Blogs</a></li>
+					  <li><a href="http://jobs.dreamincode.net">Jobs</a></li>
+					  <li class="last">
+					   <a rel="nofollow" href="/forums/forum/1-caffeine-lounge/">Lounge</a>
+
+			</li>
+					</ul>
+					  <!-- INCLUDE CLASS PANEL -->
+												<ul id="login-register">
+	<li id="login"><a rel="nofollow" href="/forums/index.php?app=core&amp;module=global&amp;section=login">Login</a></li>
+	<li id="register"><a rel="nofollow" href="/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1">Join!</a></li>
+	<li id="todaystopics"><a href="/forums/index.php?app=core&module=search&do=active">Today's Topics</a></li>
+</ul>
+						<!-- /INCLUDE CLASS PANEL -->
+		</div>
+      </div>
+
+
+
+	<div id='div-gpt-ad-1326943007260-5' style="margin: 5px auto; width: 100%; min-height: 90px; text-align: center;">
+	<!-- begin ad tag (tile=1) -->
+	<script type="text/javascript">
+	//<![CDATA[
+	ord = window.ord || Math.floor(Math.random()*1E16);
+	document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=1;dcopt=ist;sz=728x90,970x90,970x250;ord=' + ord + '?"><\/script>');
+	//]]>
+	</script>
+	<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90,970x90,970x250;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90,970x90,970x250;ord=123456789?" border="0" alt="" /></a></noscript>
+	<!-- end ad tag -->
+	</div>
+
+
+
+<div style=" background: #FFF; margin: 0px auto; border-left: 1px solid #FFF;border-right: 1px solid #FFF;">
+    <!-- /TOP.PHP -->
+
+
+<!--/ included content-->
+    <!-- <?=forums?> | <?=forums?> -->
+
+  <div id="main_content">
+    <div id="content_hold"  class="with_sidebar">
+      <div id="content_inner" class="content">
+        <div id='ipbwrapper'>
+<ul id='breadcrumb' itemprop='breadcrumb' class='left'><li class='first'><a href='http://www.dreamincode.net/forums/index'>Dream.In.Code</a></li>
+  
+            <li><span class='nav_sep'>&gt;</span> <a href='http://www.dreamincode.net/forums/forum/76-programming-help/' title='Return to Programming Help'>Programming Help</a></li>
+  
+
+
+            <li><span class='nav_sep'>&gt;</span> <a href='http://www.dreamincode.net/forums/forum/112-assembly/' title='Return to Assembly'>Assembly</a></li>
+  
+
+          </ul><br />
+          <!--included content-->
+<!-- ads_top.php -->
+<!-- 
+	<div id=EchoTopic>
+	<br />
+-->
+
+<!--/ads_top.php -->
+<!--/ included content-->
+          <div id='content' class='clear'>
+            <a id='j_content'></a>
+            <!--topicViewTemplate-->
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+	ipb.topic.inSection = 'topicview';
+	ipb.topic.topic_id  = 256591;
+	ipb.topic.forum_id  = 112;
+	ipb.topic.start_id  = 0;
+	// Editor JS: Only needs to be done once per page
+	ipb.editor_values.get('templates')['link'] = new Template("<label for='#{id}_url'>URL</label><input type='text' class='input_text' id='#{id}_url' value='http://' tabindex='10' /><label for='#{id}_urltext'>Link text</label><input type='text' class='input_text _select' id='#{id}_urltext' value='My link' tabindex='11' /><input type='submit' class='input_submit' value='Insert Link' tabindex='12' />");
+ipb.editor_values.get('templates')['image'] = new Template("<label for='#{id}_img'>Image URL</label><input type='text' class='input_text' id='#{id}_img' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Image' tabindex='11' />");
+ipb.editor_values.get('templates')['email'] = new Template("<label for='#{id}_email'>Email Address</label><input type='text' class='input_text' id='#{id}_email' tabindex='10' /><label for='#{id}_emailtext'>Link text</label><input type='text' class='input_text _select' id='#{id}_emailtext' value='Email me' tabindex='11' /><input type='submit' class='input_submit' value='Insert Email' tabindex='12' />");
+ipb.editor_values.get('templates')['media'] = new Template("<label for='#{id}_media'>Media URL</label><input type='text' class='input_text' id='#{id}_media' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Media' tabindex='11' />");
+ipb.editor_values.get('templates')['generic'] = new Template("<div class='rte_title'>#{title}</div><strong>Example</strong><pre>#{example}</pre><label for='#{id}_option' class='optional'>#{option_text}</label><input type='text' class='input_text optional' id='#{id}_option' tabindex='10' /><label for='#{id}_text'>#{value_text}</label><input type='text' class='input_text _select' id='#{id}_text' tabindex='11' /><input type='submit' class='input_submit' value='Add' tabindex='12' />");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+	
+ipb.editor_values.get('templates')['toolbar'] = new Template("<ul id='#{id}_toolbar_#{toolbarid}' class='toolbar' style='display: none'>#{content}</ul>");
+ipb.editor_values.get('templates')['button'] = new Template("<li><span id='#{id}_cmd_custom_#{cmd}' class='rte_control rte_button specialitem' title='#{title}'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/rte_icons/#{img}' alt='Icon' /></span></li>");
+ipb.editor_values.get('templates')['menu_item'] = new Template("<li id='#{id}_cmd_custom_#{cmd}' class='specialitem clickable'>#{title}</li>");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+ipb.editor_values.get('templates')['emoticons_showall'] = new Template("<input class='input_submit emoticons' type='button' id='#{id}_all_emoticons' value='Show all emoticons' />");
+ipb.editor_values.get('templates')['emoticon_wrapper'] = new Template("<h4><span>Emoticons</span></h4><div id='#{id}_emoticon_holder' class='emoticon_holder'></div>");
+
+// Add smilies into the mix
+ipb.editor_values.set( 'show_emoticon_link', false );
+
+ipb.editor_values.set( 'bbcodes', $H({"snapback":{"id":"1","title":"Post Snap Back","desc":"This tag displays a little linked image which links back to a post - used when quoting posts from the board. Opens in same window by default.","tag":"snapback","useoption":"0","example":"[snapback]100[/snapback]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"topic":{"id":"5","title":"Topic Link","desc":"This tag provides an easy way to link to a topic","tag":"topic","useoption":"1","example":"[topic=1]Click me![/topic]","switch_option":"0","menu_option_text":"Enter the topic ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"post":{"id":"6","title":"Post Link","desc":"This tag provides an easy way to link to a post.","tag":"post","useoption":"1","example":"[post=1]Click me![/post]","switch_option":"0","menu_option_text":"Enter the Post ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"spoiler":{"id":"7","title":"Spoiler","desc":"Spoiler tag","tag":"spoiler","useoption":"0","example":"[spoiler]Some hidden text[/spoiler]","switch_option":"0","menu_option_text":"","menu_content_text":"Enter the text to be masked","single_tag":"0","optional_option":"0","image":""},"acronym":{"id":"8","title":"Acronym","desc":"Allows you to make an acronym that will display a description when moused over","tag":"acronym","useoption":"1","example":"[acronym='Laugh Out Loud']lol[/acronym]","switch_option":"0","menu_option_text":"Enter the description for this acronym (EG: Laugh Out Loud)","menu_content_text":"Enter the acronym (EG: lol)","single_tag":"0","optional_option":"0","image":""},"hr":{"id":"12","title":"Horizontal Rule","desc":"Adds a horizontal rule to separate text","tag":"hr","useoption":"0","example":"[hr]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"1","optional_option":"0","image":""},"php":{"id":"14","title":"PHP Code","desc":"Allows you to enter PHP code into a formatted/highlighted syntax box","tag":"php","useoption":"0","example":"[php]$variable = true;\n\nprint_r($variable);[/php]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"html":{"id":"15","title":"HTML Code","desc":"Allows you to enter formatted/syntax-highlighted HTML code","tag":"html","useoption":"0","example":"[html]<body>\n <div class='outer'>\n  <p>Hello World</p>\n </div>\n</body>[/html]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"sql":{"id":"16","title":"SQL Code","desc":"Allows you to enter formatted/syntax-highlighted SQL code","tag":"sql","useoption":"0","example":"[sql]SELECT p.*, t.* FROM posts p LEFT JOIN topics t ON t.tid=p.topic_id WHERE t.tid=7[/sql]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"xml":{"id":"17","title":"XML Code","desc":"Allows you to enter formatted/syntax-highlighted XML code","tag":"xml","useoption":"0","example":"[xml]<outer>\n <inner>\n  <tag param='1'>Test</tag>\n </inner>\n</outer>[/xml]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"member":{"id":"31","title":"Member","desc":"Given a member name, a link is automatically generated to the member's profile","tag":"member","useoption":"1","example":"[member=skyhawk133] runs this site.","switch_option":"0","menu_option_text":"Input Username of Member","menu_content_text":"","single_tag":"1","optional_option":"0","image":"memberbbcode.png"},"extract":{"id":"33","title":"Extract Blog Entry","desc":"This will allow users to define an extract for an entry. Only this piece of the entry will be displayed on the main blog page and will show up in the RSS feed.","tag":"extract","useoption":"0","example":"[extract]This is an example![/extract]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"blog":{"id":"34","title":"Blog Link","desc":"This tag provides an easy way to link to a blog.","tag":"blog","useoption":"1","example":"[blog=100]Click me![/blog]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"entry":{"id":"35","title":"Blog Entry Link","desc":"This tag provides an easy way to link to a blog entry.","tag":"entry","useoption":"1","example":"[entry=100]Click me![/entry]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"twitter":{"id":"36","title":"Twitter","desc":"A tag to link to a user's twitter account","tag":"twitter","useoption":"0","example":"[twitter]userName[/twitter]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"twitter.png"},"inline":{"id":"37","title":"Inline Code","desc":"Formats code inline instead of in a seperate code box. ","tag":"inline","useoption":"0","example":"[inline]style=\"font-size: 12px;\"[/inline]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"il":{"id":"38","title":"Abbreviated Inline (IL)","desc":"Abbreviated version of the [inline] tag. ","tag":"il","useoption":"0","example":"[il]Code Here[/il]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"il2.png"},"code":{"id":"41","title":"Code","desc":"Allows you to enter general code","tag":"code","useoption":"1","example":"[code]$text = 'Some long code here';[/code]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"1","image":""}}) );
+	ipb.vars['emoticon_url'] = "http://cdn.dreamincode.net/forums/public/style_emoticons/default";
+	//Search Setup
+	ipb.vars['search_type']			= 'forum';
+	ipb.vars['search_type_id']		= 112;
+	ipb.vars['search_type_2']		= 'topic';
+	ipb.vars['search_type_id_2']	= 256591;
+//]]>
+</script>
+
+
+
+<div class='topic_controls'>
+        <h1 style="font-size: 20px; font-weight: bolder; text-transform:capitalize; margin-top: -15px; margin-bottom: 10px;"><a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/' style="text-decoration: none;">MASM lang, adding user input into an array</a></h1>			
+				
+			
+		
+	<span class='pagination no_pages left'>Page 1 of 1</span>
+
+					<ul class='topic_buttons'>
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=core&module=global&section=register&coppa_user=&termsread=1&coppa_pass=1&agree_to_terms=1' title='New Topic/Question' accesskey='n'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/page_white_add.png' alt='' /> New Topic/Question</a></li>
+			
+			
+						<li><a href='http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591' title='Reply' accesskey='r'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/arrow_rotate_clockwise.png' alt='Reply' /> Reply</a></li>
+					
+			
+		</ul>
+	</div>
+<div class='topic hfeed'>
+	<h2 class='maintitle'>
+		        <span style="color: #CCC; font-weight: bold; font-size: 14px;">5 Replies - 16811 Views - Last Post: 22 November 2011 - 08:35 PM</span>
+		<!-- SKINNOTE: Need to fill in proper URL for topic rating -->
+		
+	</h2>
+	
+	
+	
+	
+	
+
+  	<!-- topic header ads  test -->
+
+	
+<!-- skinnote: Posts by ignored users are not hidden, check _ignored -->
+	
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1491600 - 1-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1491600'>
+
+
+<!--<div style="font-family: Arial; font-size: 14px; font-weight: bolder; text-align: center; ">
+<a href="http://ad.doubleclick.net/clk;235937818;52709661;v?http://clk.atdmt.com/MRT/go/299049664/direct;wi.1;hi.1/01/" target="_blank" style="color: #0000CC;"><img src="http://cdn.dreamincode.net/home/images/windows_icon.png.pagespeed.ce.8z1Ez4uU32.png">Develop For Windows - A Stage As Big As Your Ideas! - New Devices, New Opportunities</a>
+</div>-->
+
+
+			<a id='entry1491600'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1491600' rel='bookmark' title='Link to post #1'>#1</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/385210-techdee/'>TechDee</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/385210-techdee/page__f__112' class='__user __id385210 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/385210-techdee/" title="View Profile"><img src='http://cdn.dreamincode.net/home/images/about_unknown.gif' width='64' height='64' alt='' /></a></li>
+		
+		
+			<li class='title'>D.I.C Head</li>
+		
+		
+	</ul>
+	<br />
+		
+		
+		
+			<div class='reputation zero'>
+		
+		<span class='number'>Reputation: 0</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=385210' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>70</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>21-May 10</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+                                <h1 class='entry-title'>MASM lang, adding user input into an array</h1>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-21T10:48:28+00:00">21 November 2011 - 03:48 AM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->I have created this code but I don&#39;t understand how to add the element in the array. <br />
+Can someone explain what I&#39;m doing wrong.<br />
+<br />
+Description: this program prompts the user for two integers and add the integers and display the results to the screen<br />
+<br />
+Thank you<br />
+<pre class='brush: bash ;'>
+.data
+promptUse byte &quot;Enter two integers: &quot;, 0
+results byte &quot;Result is: &quot;, 0
+.code
+ main proc
+
+ mov esi, offset array
+ mov ecx, int_count
+
+l1:
+ mov edx, offset promptUser 
+ call writestring
+ call readint
+ mov &#91;esi&#93;,eax 
+ add eax, &#91;esi&#93;
+ add esi, type dword
+ loop l1
+
+ mov edx, offset results
+ call writestring
+call writeint
+ 
+
+ 
+exit
+main endp
+end main
+
+
+
+</pre>
+						
+						<br />
+						<p class='edit'>
+								This post has been edited by <b>TechDee</b>: 21 November 2011 - 03:54 AM
+								
+							</p>
+					</div>
+					
+
+
+                                <div id='div-gpt-ad-1326943007260-1' style="padding-left: 15px;">
+				
+
+<!-- begin ad tag (tile=2) -->
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+//]]>
+</script>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" border="0" alt="" /></a></noscript>
+<!-- end ad tag -->
+
+</div>
+<br/>
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1491600'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Is This A Good Question/Topic?
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1491600 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1491600', { app: 'forums', type: 'pid', typeid: '1491600' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1491600' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1491600" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1491600" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1491600').show();
+					
+					if( $('toggle_post_1491600') )
+					{
+						$('toggle_post_1491600').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+
+
+	
+		
+<h2 class='maintitle'>
+		<strong>Replies To:</strong> MASM lang, adding user input into an array
+</h2>	
+     
+    
+		<!--Begin Msg Number 1492078 - 2-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1492078'>
+
+
+
+			<a id='entry1492078'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1492078' rel='bookmark' title='Link to post #2'>#2</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/3388-born2c0de/'>born2c0de</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/3388-born2c0de/page__f__112' class='__user __id3388 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/3388-born2c0de/" title="View Profile"><img src='http://www.gravatar.com/avatar/55d8bbada932e15aac2faa5b14c41b26?s=64' alt='' /></a></li>
+		
+		
+			<li class='title'>printf(&quot;I&#39;m a %XR&quot;,195936478);</li>
+		
+		<li class='group_icon'>
+			
+				<img src='http://cdn.dreamincode.net/forums/public/style_extra/group_icons/alumni_group.gif' alt='member icon'>
+			
+			</li>
+	</ul>
+	<br />
+		
+			<div class='reputation positive'>
+		
+		
+		
+		<span class='number'>Reputation: 184</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=3388' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>4,673</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>26-November 04</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+  				<h2 class='entry-title'>Re: MASM lang, adding user input into an array</h2>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-21T21:00:12+00:00">21 November 2011 - 02:00 PM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->It&#39;s been a while since I&#39;ve written code in Asm so I can&#39;t help you unless I can compile your code.<br />
+Where are the &#39;writestring&#39;, &#39;writeint&#39; and &#39;readint&#39; stored?<br />
+I don&#39;t see an INCLUDE anywhere.
+						
+						<br />
+						
+					</div>
+					
+
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1492078'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1492078 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+							<li><a href='#' class='rep_down' title='Vote this post down'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/delete.png' alt='-' /></a></li>
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1492078', { app: 'forums', type: 'pid', typeid: '1492078' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1492078' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492078" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492078" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1492078').show();
+					
+					if( $('toggle_post_1492078') )
+					{
+						$('toggle_post_1492078').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1492147 - 3-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1492147'>
+
+
+
+			<a id='entry1492147'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1492147' rel='bookmark' title='Link to post #3'>#3</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/495049-gunnerinc/'>GunnerInc</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/495049-gunnerinc/page__f__112' class='__user __id495049 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/495049-gunnerinc/" title="View Profile"><img src='http://www.dreamincode.net/forums/uploads/av-495049.gif' width='64' height='64' alt='' /></a></li>
+		
+		
+			<li class='title'>&quot;Hurry up and wait&quot;</li>
+		
+		<li class='group_icon'>
+			
+				<img src='http://cdn.dreamincode.net/forums/public/style_extra/group_icons/moderator_group.gif' alt='member icon'><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-69417-13430787110388.png'/><br /> <img src='http://cdn.dreamincode.net/forums/public/style_extra/group_icons/forum_leader.png'/><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-91103-13426413555116.png'/><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-69417-13430469237991.png'/>
+			
+			</li>
+	</ul>
+	<br />
+		
+			<div class='reputation positive'>
+		
+		
+		
+		<span class='number'>Reputation: 907</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=495049' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>2,350</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>28-March 11</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+  				<h2 class='entry-title'>Re: MASM lang, adding user input into an array</h2>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-21T22:17:56+00:00">21 November 2011 - 03:17 PM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->Can you do me a small favor TechDee...  Respond to my replies to your posts, say something like - thanks, got it, ok, etc just so I know you read and understand my replies.  I replied and you ask almost the same exact question again.<br />
+<br />
+What is line 16?  If you are going to add 4 then say add esi, 4.<br />
+<br />
+You want an array that holds 2 dwords?<br />
+<pre class='brush: bash ;'>SomeArray      DWORD 2 dup (?)</pre><br />
+<br />
+to add to the array:<br />
+<pre class='brush: bash ;'>    mov     esi, offset SomeArray
+    mov     dword ptr &#91;esi&#93;, 2 ; move 2 into first 4 bytes of array
+    mov     dword ptr &#91;esi + 4&#93;, 3 ; mov 3 into last 8 bytes of array</pre> <br />
+<br />
+to retrieve:<br />
+<pre class='brush: bash ;'>    mov     eax, &#91;esi&#93; ; get number at index 0 of array (first 4 bytes)
+    call    WriteInt
+    call    Crlf
+    
+    mov     eax, &#91;esi + 4&#93; ; get number at index 1 of array (last 8 bytes)
+    call    WriteInt
+    call    Crlf    
+    call    Crlf
+
+    ; or to use in a loop
+    xor     ecx, ecx
+@@:
+    mov     eax, &#91;esi + 4 * ecx&#93;  
+    call    WriteInt
+    call    Crlf
+    inc     ecx
+    cmp     ecx, 2
+    jne     @B  
+</pre><br />
+<br />
+every time you do:<br />
+<pre class='brush: bash ;'>mov &#91;esi&#93;,eax</pre> you are overwriting what is in the first 4 bytes of the array.
+						
+						<br />
+						<p class='edit'>
+								This post has been edited by <b>GunnerInc</b>: 21 November 2011 - 03:19 PM
+								
+							</p>
+					</div>
+					
+
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1492147'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1492147 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+							<li><a href='#' class='rep_down' title='Vote this post down'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/delete.png' alt='-' /></a></li>
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1492147', { app: 'forums', type: 'pid', typeid: '1492147' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1492147' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492147" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492147" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1492147').show();
+					
+					if( $('toggle_post_1492147') )
+					{
+						$('toggle_post_1492147').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1492858 - 4-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1492858'>
+
+
+
+			<a id='entry1492858'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1492858' rel='bookmark' title='Link to post #4'>#4</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/385210-techdee/'>TechDee</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/385210-techdee/page__f__112' class='__user __id385210 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/385210-techdee/" title="View Profile"><img src='http://cdn.dreamincode.net/home/images/about_unknown.gif' width='64' height='64' alt='' /></a></li>
+		
+		
+			<li class='title'>D.I.C Head</li>
+		
+		
+	</ul>
+	<br />
+		
+		
+		
+			<div class='reputation zero'>
+		
+		<span class='number'>Reputation: 0</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=385210' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>70</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>21-May 10</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+  				<h2 class='entry-title'>Re: MASM lang, adding user input into an array</h2>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-22T18:53:56+00:00">22 November 2011 - 11:53 AM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->This is what I coded and my counter continue to run...(infinte) I can&#39;t seem to debbug it...<br />
+<br />
+What I want to do is, select an array size using a constant:<br />
+array_size = 20<br />
+array dword array_size dup(?)<br />
+<br />
+Write a procedure that prompts the user for the number of integers to be processed. Pass the same value to the PromptForIntegers procedure. For example<br />
+<br />
+How many integers will be added? 5<br />
+<br />
+<pre class='brush: bash ;'>
+INCLUDE Irvine32.inc
+
+ array_size = 10
+ .data
+ prompt1 byte &quot;How many integers will be added?&quot;, 0
+ prompt2 byte &quot;Enter a signed integer: &quot;, 0
+ prompt3 byte &quot;The sum of the integers is: &quot;, 0
+ array dword array_size dup(?)
+
+ .code
+ main proc
+		call clrscr
+		mov ecx,eax
+		call promptMes
+		call arraysum
+		call displaysum
+		exit
+main endp
+
+promptMes proc uses ecx edx esi
+		mov edx,offset prompt1
+		mov esi,offset array
+		call writestring		;display string
+		call readint		;read integer into eax
+		call crlf		;go to nest output line
+		call promptforintegers
+		ret
+promptMes endp
+
+
+
+	mov edx,offset prompt2		;&quot;Enter a signed integer&quot;
+	l1: call writestring		;display string
+	call readint			;read integer into eax
+	call crlf			;go to nest output line
+	mov &#91;esi&#93;, ax			;store in array		
+	add esi,type word		;next integer
+			
+	loop l1
+		ret
+promptforintegers endp
+
+
+
+		mov eax, 0		;set the sum to zero
+		l1: add eax,&#91;esi&#93;	;add each integer to sum
+		add esi,type dword	;point to next integer
+		loop l1			;repeat for array size
+		ret			;sum is in EAX
+arraysum endp
+
+
+			mov edx, offset prompt3		;&quot;The sum of the ...&quot;
+			call writestring
+			call writeint			;display EAX
+			call crlf
+			ret
+displaysum endp
+end main
+
+
+</pre>
+						
+						<br />
+						<p class='edit'>
+								This post has been edited by <b>TechDee</b>: 22 November 2011 - 01:12 PM
+								
+							</p>
+					</div>
+					
+
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1492858'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1492858 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+							<li><a href='#' class='rep_down' title='Vote this post down'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/delete.png' alt='-' /></a></li>
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1492858', { app: 'forums', type: 'pid', typeid: '1492858' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1492858' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492858" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1492858" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1492858').show();
+					
+					if( $('toggle_post_1492858') )
+					{
+						$('toggle_post_1492858').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1493117 - 5-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1493117'>
+
+
+
+			<a id='entry1493117'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1493117' rel='bookmark' title='Link to post #5'>#5</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/495049-gunnerinc/'>GunnerInc</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/495049-gunnerinc/page__f__112' class='__user __id495049 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/495049-gunnerinc/" title="View Profile"><img src='http://www.dreamincode.net/forums/uploads/av-495049.gif' width='64' height='64' alt='' /></a></li>
+		
+		
+			<li class='title'>&quot;Hurry up and wait&quot;</li>
+		
+		<li class='group_icon'>
+			
+				<img src='http://cdn.dreamincode.net/forums/public/style_extra/group_icons/moderator_group.gif' alt='member icon'><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-69417-13430787110388.png'/><br /> <img src='http://cdn.dreamincode.net/forums/public/style_extra/group_icons/forum_leader.png'/><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-91103-13426413555116.png'/><br /> <img src='http://www.dreamincode.net/forums/uploads/monthly_07_2012/post-69417-13430469237991.png'/>
+			
+			</li>
+	</ul>
+	<br />
+		
+			<div class='reputation positive'>
+		
+		
+		
+		<span class='number'>Reputation: 907</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=495049' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>2,350</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>28-March 11</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+  				<h2 class='entry-title'>Re: MASM lang, adding user input into an array</h2>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-22T23:59:58+00:00">22 November 2011 - 04:59 PM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->again, don&#39;t do this: <span class="inlinecode">add esi,type word       ;next integer</span><br />
+<br />
+do this:<br />
+    <pre class='brush: bash ;'>add    esi, 4</pre><br />
+<br />
+That code will not assemble with our errors and warnings.  Your procedures are incorrect.  For example this is the end of promptforintegers:<br />
+promptforintegers endp but were is the beginning? All of your procs are like that, incomplete.<br />
+<br />
+Again, there is no such thing in the the Irvine32 library as readint, writestring, crlf, clscr...  use the correct case for the function names as the Author wrote them.  I refuse to fix all these typos to get your code to work.<br />
+<br />
+As I am sure I said before, the loop mnemonic uses ecx as its counter, where are you setting ecx?  <br />
+<br />
+Hold on, I will say sorry if it is the case.  I think you are using an older version of his includes and library, the old library used lowercase for many of the function names.  Download an &quot;updated&quot; version here:<br />
+<a href='http://kipirvine.com/asm/examples/index.htm' class='bbc_url' title='External link' rel='external'>http://kipirvine.com...mples/index.htm</a>  If not, please use the correct case.<br />
+<br />
+You are using the arrays wrong also, I wrote a tutorial for arrays: <a href='http://www.dreamincode.net/forums/topic/256698-masm-arrays/' class='bbc_url' title='External link' rel='external'>http://www.dreaminco...98-masm-arrays/</a><br />
+<br />
+Read about loops here: <a href='http://www.dreamincode.net/forums/topic/253516-masm-loops/' class='bbc_url' title='External link' rel='external'>http://www.dreaminco...516-masm-loops/</a>
+						
+						<br />
+						
+					</div>
+					
+
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1493117'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1493117 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+							<li><a href='#' class='rep_down' title='Vote this post down'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/delete.png' alt='-' /></a></li>
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1493117', { app: 'forums', type: 'pid', typeid: '1493117' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1493117' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1493117" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1493117" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1493117').show();
+					
+					if( $('toggle_post_1493117') )
+					{
+						$('toggle_post_1493117').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+
+
+	
+		 
+    
+		<!--Begin Msg Number 1493254 - 6-->
+		<div class='post_block hentry clear  with_rep' id='post_id_1493254'>
+
+
+
+			<a id='entry1493254'></a>
+			
+			
+			
+			
+			<div class='post_wrap' >
+				
+					<h3>
+				
+						<span class='post_id'>
+							<a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__findpost__p__1493254' rel='bookmark' title='Link to post #6'>#6</a>
+						</span>
+				<span class="author vcard">
+								<a class="url fn" href='http://www.dreamincode.net/forums/user/385210-techdee/'>TechDee</a>
+								&nbsp;<a href='http://www.dreamincode.net/forums/user/385210-techdee/page__f__112' class='__user __id385210 __fid112' title='View Profile'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_popup.png' alt='Icon' /></a>
+					
+								<img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/user_off.png' alt='User is offline' title='User is offline' />
+					
+							</span>
+
+
+				
+					</h3>
+				<div class='author_info'>
+					<!--userInfoPane-->
+<ul class='user_details'>
+		
+			<li class='avatar'><a href="http://www.dreamincode.net/forums/user/385210-techdee/" title="View Profile"><img src='http://cdn.dreamincode.net/home/images/about_unknown.gif' width='64' height='64' alt='' /></a></li>
+		
+		
+			<li class='title'>D.I.C Head</li>
+		
+		
+	</ul>
+	<br />
+		
+		
+		
+			<div class='reputation zero'>
+		
+		<span class='number'>Reputation: 0</span>
+			</div>
+	<div style='margin: 0 auto;'>
+		<ul class='user_controls clear'>
+			
+			
+			
+				<li><a href='http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=385210' title='View blog'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/book_open.png' alt='View blog' /></a></li>
+			
+			
+		</ul>
+	</div>
+	<ul class='user_fields'>
+                
+		
+			<li>
+				<span class='ft'>Posts:</span>
+				<span class='fc'>70</span>
+			</li>
+			<li>
+				<span class='ft'>Joined:</span>
+				<span class='fc'>21-May 10</span>
+			</li>
+		
+	</ul>   
+			
+	
+<!--userInfoPane-->
+				</div>
+				<div class='post_body'>
+
+
+  				<h2 class='entry-title'>Re: MASM lang, adding user input into an array</h2>
+
+
+					<p class='posted_info'>
+						
+						
+						Posted <abbr class="published updated" title="2011-11-23T03:35:10+00:00">22 November 2011 - 08:35 PM</abbr>
+					</p>
+					
+					<div class='post entry-content'>
+						<!--cached-Thu, 05 Nov 2015 03:03:45 +0000-->This is my old program (masm lang), my new procedure will ask the user for the number of integers they wish to enter, an array_size = 20, array dword array_size dup(?), and I will prompt them : How many integers will be added? 5 --- for example.<br />
+<br />
+<br />
+I now that the user input will the value to start the interation. I want to know how the set this up to do this? Thanks you advance.<br />
+<br />
+<pre class='brush: bash ;'>INCLUDE Irvine32.inc
+integer_count = 3
+.data
+ str1 byte &quot;Enter a signed integer: &quot;, 0
+ str2 byte &quot;The sum of the integers is: &quot;, 0
+ array dword integer_count dup(?)
+
+ .code
+ main proc
+		call clrscr
+		mov esi,offset array
+		mov ecx,integer_count
+		call promptforintegers
+		call arraysum
+		call displaysum
+		exit
+main endp
+
+
+promptforintegers proc uses ecx edx esi
+
+		mov edx,offset str1		
+	l1: 	call writestring		
+		call readint			
+		call crlf				
+		mov &#91;esi&#93;, ax					
+		add esi,type word		
+			
+	loop l1
+	ret
+promptforintegers endp
+
+
+arraysum proc uses esi ecx
+
+		mov eax, 0						
+	l1: 	add eax,&#91;esi&#93;					
+		add esi,type dword				
+	loop l1								
+	ret								
+arraysum endp
+
+displaysum proc uses edx
+
+
+	mov edx, offset str2			
+	call writestring
+	call writeint					
+	call crlf
+	ret
+displaysum endp
+end main
+</pre>
+						
+						<br />
+						
+					</div>
+					
+
+
+				</div>
+			<div class='rep_bar clear right' id='rep_post_1493254'><span style="float: left; margin-top: 10px; font-weight: bold;">
+
+Was This Post Helpful? 
+
+</span>
+					
+												
+				
+					<span class='reputation zero rep_show clickable' title='Reputation' onclick='ipb.topic.repPopUp( this, 1493254 );'>
+				
+				
+				
+						0
+					</span>
+<!-- REMOVED From Below: AND Array['member_id'] != 0 -->
+					<ul>
+						
+							<li><a href='#' class='rep_up' title='Vote this post up'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/add.png' alt='+' /></a></li>
+						
+						
+							<li><a href='#' class='rep_down' title='Vote this post down'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/delete.png' alt='-' /></a></li>
+						
+						</ul>
+				</div>
+				<script type='text/javascript'>
+					ipb.global.registerReputation( 'rep_post_1493254', { app: 'forums', type: 'pid', typeid: '1493254' }, parseInt('0') );
+				</script>
+				<ul class='post_controls'>
+					
+					<li class='top hide'><a href='#top' class='top' title='Back to top'>Back to top</a></li>
+					
+					
+						<li class='multiquote' id='multiq_1493254' style='display: none'>
+					
+							<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1493254" title="Quote this post with Multi-Quote"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> MultiQuote</a>
+						</li>
+					<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=112&amp;t=256591&amp;qpid=1493254" title="Reply directly to this post"><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/comment_add.png' alt='Reply Icon' /> Quote + Reply</a></li>
+					
+					
+					<!-- Matt: Approve / unapprove post button -->
+					
+				</ul>
+				<script type='text/javascript'>
+					// Show multiquote for JS browsers
+					$('multiq_1493254').show();
+					
+					if( $('toggle_post_1493254') )
+					{
+						$('toggle_post_1493254').show();
+					}
+				</script>
+				
+			</div>
+		<!-- </if> -->			
+		</div>
+		
+		<hr />
+		
+	
+
+<!-- MOD LINKS -->
+
+<!-- REPUTATION FILTERS -->
+
+
+<!-- THREADED MODE -->
+
+<ul class='topic_jump right clear'>
+	<li class='previous'><a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__old'>&larr; Previous Topic</a></li>
+	<li><strong><a href='http://www.dreamincode.net/forums/forum/112-assembly/' title='Return to Assembly'>Assembly</a></strong></li>
+	<li class='next'><a href='http://www.dreamincode.net/forums/topic/256591-masm-lang-adding-user-input-into-an-array/page__view__new'>Next Topic &rarr;</a></li>
+</ul>
+
+<!-- BOTTOM BUTTONS -->
+<div class='topic_controls clear'>
+	
+	<span class='pagination no_pages left'>Page 1 of 1</span>
+
+
+</div>
+<!--<hr />-->
+
+<!-- ACTIVE USERS -->
+
+
+<!-- Close topic -->
+</div>
+
+
+
+<!--/topicViewTemplate-->
+            <br class='clear' />
+          </div>
+          <!--included content-->
+<!-- ads_bottom-->
+
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+	<td align="center" valign="top">
+		<div id='div-gpt-ad-1326943007260-4' style='width:336px; height:280px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1326943007260-4'); });
+	</script>
+	</div>
+		</td>
+<td align="left" valign="top" width="100%">		
+		<div id="related" style="margin-top: -25px;">
+					<style>
+		.related ul { list-style-type: circle; font-size: 12px; font-weight: bold; }
+        .related li { margin-bottom: 5px; background-position: left 7px !important; margin-left: -35px; }
+		.related h2 { font-size: 18px; font-weight: bold; }
+		.related a { color: blue; }
+		</style>
+		<div class="related">
+<h2>Related  Topics<sup>beta</sup></h2><ul><li><a href='http://www.dreamincode.net/forums/topic/268208-ascii-binary-input-into-an-integer-and-return-the-integer/' title='5 Replies - Topic Started: February 25, 2012, 6:08 pm' /'>AscII Binary Input Into An Integer And Return The Integer?</a> </li><li><a href='http://www.dreamincode.net/forums/topic/334002-infinite-loop-user-input-array/' title='6 Replies - Topic Started: November 14, 2013, 5:56 am' /'>Infinite Loop User Input Array</a> </li><li><a href='http://www.dreamincode.net/forums/topic/257074-masm-lang-prompt-the-user-for-a-number-not-greater-than-10/' title='5 Replies - Topic Started: November 24, 2011, 11:42 pm' /'>Masm Lang... Prompt The User For A Number Not Greater Than 10</a> </li><li><a href='http://www.dreamincode.net/forums/topic/316464-how-to-get-back-to-the-beginning-of-an-array/' title='3 Replies - Topic Started: March 23, 2013, 7:53 pm' /'>How To Get Back To The Beginning Of An Array</a> </li><li><a href='http://www.dreamincode.net/forums/topic/356343-mips-user-input-to-an-array-and-summing-then-printing-out/' title='1 Replies - Topic Started: October 22, 2014, 2:22 pm' /'>MIPS User Input To An Array And Summing Then Printing Out</a> </li><li><a href='http://www.dreamincode.net/forums/topic/257281-having-trouble-inserting-a-number-into-an-array-help/' title='10 Replies - Topic Started: November 26, 2011, 8:32 pm' /'>Having Trouble Inserting A Number Into An Array - HELP</a> </li><li><a href='http://www.dreamincode.net/forums/topic/376816-getting-and-storing-user-input-for-matrices/' title='3 Replies - Topic Started: June 2, 2015, 10:14 pm' /'>Getting And Storing User Input For Matrices</a> </li><li><a href='http://www.dreamincode.net/forums/topic/215569-user-input-array-selection-sort-help-please/' title='1 Replies - Topic Started: February 12, 2011, 1:21 am' /'>User Input Array + Selection Sort | Help Please&#33;</a> </li><li><a href='http://www.dreamincode.net/forums/topic/275575-how-can-i-store-sequence-in-an-array-in-mips/' title='4 Replies - Topic Started: April 17, 2012, 1:34 pm' /'>How Can I Store Sequence In An Array In MIPS?</a> </li><li><a href='http://www.dreamincode.net/forums/topic/313676-assembly-language-reverse-an-array-error-with-code/' title='4 Replies - Topic Started: February 27, 2013, 4:26 am' /'>Assembly Language, Reverse An Array, Error With Code</a> </li></ul></div>			</div>
+		</td>
+        
+	</tr>
+</table>
+
+<!--/ads_bottom-->
+
+<!--/ included content-->
+
+          <script type='text/javascript' src='http://cdn.dreamincode.net/forums/public/js/3rd_party/lightbox.js'></script>
+<script type='text/javascript'>
+//<![CDATA[
+	// Lightbox Configuration
+	LightboxOptions = Object.extend({
+	    fileLoadingImage:        'http://cdn.dreamincode.net/forums/public/style_images/DIC/lightbox/loading.gif',     
+	    fileBottomNavCloseImage: 'http://cdn.dreamincode.net/forums/public/style_images/DIC/lightbox/closelabel.gif',
+	    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+	    animate: true,         // toggles resizing animations
+	    resizeSpeed: 7,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+	    borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+		// When grouping images this is used to write: Image # of #.
+		// Change it for non-english localization
+		labelImage: "Image",
+		labelOf: "of"
+	}, window.LightboxOptions || {});
+/* Watch for a lightbox image and set up our downloadbutton watcher */
+document.observe('click', (function(event){
+    var target = event.findElement('a[rel^=lightbox]') || event.findElement('area[rel^=lightbox]');
+    if (target) {
+        event.stop();
+        gbl_addDownloadButton();
+    }
+}).bind(this));
+var _to    = '';
+var _last  = '';
+function gbl_addDownloadButton()
+{
+	if ( typeof( ipsLightbox.lightboxImage ) != 'undefined' && ipsLightbox.lightboxImage.src )
+	{
+		if ( _last != ipsLightbox.lightboxImage.src )
+		{
+			if ( ! $('gbl_d') )
+			{
+				$('bottomNav').insert( { top: "<div id='gbl_d' style='text-align:right;padding-bottom:4px;'></div>" } );
+			}
+			
+			$('gbl_d').update( "<a href='"+ ipsLightbox.lightboxImage.src + "' target='_blank'><img src='http://cdn.dreamincode.net/forums/public/style_images/DIC/lightbox/download-icon.png' /></a>" );
+			
+			_last = ipsLightbox.lightboxImage.src;
+		}
+	}
+	
+	/* Check for init and then keep checking for new image */
+	_to = setTimeout( "gbl_addDownloadButton()", 1000 );
+}
+//]]>
+</script>
+
+        </div><!-- /ipbwrapper -->
+      </div><!-- /content_inner -->
+    </div><!--/content_hold-->	
+
+    <!--included content-->
+			
+<div id="sidebar">
+<div style="margin-left: 35px; padding-top: 10px; text-align: center;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&module=global&section=register&coppa_user=&termsread=1&coppa_pass=1&agree_to_terms=1"><img src="http://cdn.dreamincode.net/home/images/ask_a_question_336.png"/></a>
+<br/>
+<!-- begin ad tag (tile=2) -->
+<div  id='div-gpt-ad-1326943007260-2' style="width: 300px; margin-left: 25px;">                                                                   
+<!-- begin ad tag (tile=2) -->
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=' + ord + '?"><\/script>');
+//]]>
+</script>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" border="0" alt="" /></a></noscript>
+<!-- end ad tag -->
+</div>
+</div>
+<div id="sidebar_inner">
+
+	
+<div class="column1">
+  <!-- google_ad_section_start(weight=ignore) -->
+    <div class="navigation">
+      
+
+		
+		<h2><a href="/forums/forum/72-general-discussion/">General Discussion</a></h2>
+			<ul class="navigation">			
+											 <li><a href="/forums/forum/1-caffeine-lounge/" title="This is our off-topic forum for discussions related to non-programming topics including: sports, current events, games, music, movies, food, drink, TV, geek related (toys & technology), debates, life events, rants, and occasionally religion and politics. ">Caffeine Lounge</a></li>
+														 <li><a href="/forums/forum/93-corner-cubicle/" title="Off-Topic discussion of IT related topics. This is the forum for professionals and those interested in serious discussion of topics related to the world of IT. It all happens here in the corner cubicle. ">Corner Cubicle</a></li>
+														 <li><a href="/forums/forum/110-student-campus/" title="A forum just for students. Talk about colleges, classes, resources for students, homework, and other topics related to life in school. ">Student Campus</a></li>
+														 <li><a href="/forums/forum/82-software-development/" title="Discuss topics related to developing software. Including architecture, design patterns, documentation, software industry, and other non-language specific programming topics. ">Software Development</a></li>
+														 <li><a href="/forums/forum/83-industry-news/" title="A place for topics that announce various news from the web/software development industry (product release announcements, updates, new services etc.)">Industry News</a></li>
+														 <li><a href="/forums/forum/65-introduce-yourself/" title="A place where you can introduce yourself to the community and greet other new members.">Introduce Yourself</a></li>
+														 <li><a href="/forums/forum/201-nightmareincode/" title="*NEW* - Post the worst code you come across and have a good laugh. Because sometimes your code dreams, are really code nightmares. ">Nightmare.In.Code</a></li>
+										</ul>
+		
+		<h2><a href="/forums/forum/76-programming-help/">Programming Help</a></h2>
+			<ul class="navigation">			
+											 <li><a href="/forums/forum/15-c-and-c/" title="Expert programming help for C, and C++! Ask questions about homework assignments, or any other C/C++ related problems. C++ is a great language when beginning programming. ">C and C++</a></li>
+														 <li><a href="/forums/forum/67-vbnet/" title="Ask questions about Microsoft's VB.NET programming language.">VB.NET</a></li>
+														 <li><a href="/forums/forum/32-java/" title="Post your Java questions in here. We're happy to help with homework assignments, work projects, or any other java related questions. Java is common when beginning computer programming.">Java</a></li>
+														 <li><a href="/forums/forum/84-c/" title="Object Oriented Programming at its finest. Encompassing power with ease of use, C&#35; has become one of the top programming languages of the new age.">C&#35;</a></li>
+														 <li><a href="/forums/forum/30-aspnet/" title="Having some problems with ASP.NET programming? Pop in here and ask your question!">ASP.NET</a></li>
+														 <li><a href="/forums/forum/142-net-framework/" title="">.NET Framework</a></li>
+														 <li><a href="/forums/forum/21-vb6/" title="Our Visual Basic experts are happy to help with homework assignments, commercial applications, or any other VB question you may have! Visual Basic is good to learn programming. ">VB6</a></li>
+														 <li><a href="/forums/forum/28-php/" title="Having some PHP problems? Need some help with a few functions? This is the place to ask! ">PHP</a></li>
+														 <li><a href="/forums/forum/109-mobile-development/" title="Discuss developing applications for mobile phones. Including Android, iPhone, and other mobile platforms. ">Mobile Development</a></li>
+														 <li><a href="/forums/forum/29-python/" title="">Python</a></li>
+														 <li><a href="/forums/forum/70-ruby/" title="This up-and-coming language is easy to learn, fast to develop, and very powerful. Get help with the Ruby on Rails framework or any other Ruby questions you have!">Ruby</a></li>
+														 <li><a href="/forums/forum/69-game-development/" title="Get help with anything game development related. Programming, 3D Engines, Art, Design and Math etc.">Game Development</a></li>
+														 <li><a href="/forums/forum/14-databases/" title="mySQL, PostgreSQL, Access, SQL, and Oracle... you've got a database question... we've got database answers!">Databases</a></li>
+														 <li><a href="/forums/forum/31-coldfusion/" title="It's the other white meat... a rapid application development language that will have you hooked in no time! From cfoutput to components, we can help you out!">ColdFusion</a></li>
+														 <li><a href="/forums/forum/112-assembly/" title="Topics related to assembly language programming. ">Assembly</a></li>
+														 <li><a href="/forums/forum/62-other-languages/" title="Discuss languages that don't have a specific forum. Including COBOL, Fortran, ADA, Basic, etc. ">Other Languages</a></li>
+														 <li><a href="/forums/forum/126-52-weeks-of-code/" title="">52 Weeks Of Code</a></li>
+										</ul>
+		
+		<h2><a href="/forums/forum/74-web-development/">Web Development</a></h2>
+			<ul class="navigation">			
+											 <li><a href="/forums/forum/63-web-development/" title="Discuss anything that doesn't fit in the other web development forums.">Web Development</a></li>
+														 <li><a href="/forums/forum/4-html-css/" title="Have questions about HTML, XHTML, CSS? We'll get you headed in the right direction! ">HTML &amp; CSS</a></li>
+														 <li><a href="/forums/forum/90-javascript/" title="JavaScript and AJAX, it's what Web 2.0 is all about. Post your JavaScript related questions here!">JavaScript</a></li>
+														 <li><a href="/forums/forum/3-graphic-design/" title="Photoshop and Corel gurus come on in! Can't figure out how to do that cool effect? Have some questions or cool web images you've made? Post em' here">Graphic Design</a></li>
+														 <li><a href="/forums/forum/8-flash-actionscript/" title="Let our Flash and ActionScript experts answer your questions. From simple tweens to advanced flash remoting, we're happy to help!">Flash &amp; ActionScript</a></li>
+														 <li><a href="/forums/forum/89-blogging/" title="Wordpress, Blogger, Plugins, Themes, Skins, Pay Per Post, and anything else related to the Blogging industry. ">Blogging</a></li>
+														 <li><a href="/forums/forum/59-seo-advertising/" title="Advertising, SEO, AdSense, AdWords, Link Trades, and more! Now that you've created your website, you've gotta drive traffic to it. Discuss current trends and techniques here. ">SEO &amp; Advertising</a></li>
+														 <li><a href="/forums/forum/88-web-servers-hosting/" title="Apache, IIS, Shared Hosting, Dedicated Hosting, Colocation. We'll make sure you get your site online and keep it online!">Web Servers &amp; Hosting</a></li>
+														 <li><a href="/forums/forum/5-site-check/" title="Post your web site to be reviewed by fellow dream.in.code members. ">Site Check</a></li>
+										</ul>
+
+      	  <!-- DIC_160x600_Left_Default -->
+		<div id='div-gpt-ad-1326943007260-0' style='width:160px; height:600px;'>
+		<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1326943007260-0'); });
+		</script>
+		</div>
+	        <br />
+    </div>
+	<!-- google_ad_section_end -->
+</div><div class="column2">
+<!--   	<div id="search">
+  		<h2>Search<sup><span style="color:red; font-size: 10px;">Updated!</span></sup><span class="w00t">w00t</span></h2>
+  		<span style="font-size: 11px; color: #CCCCCC; font-weight: bold;"><B>Over 509,000 Pages!</B></span>
+  	  <form style="margin:0;" id="searchbox_000872085005376217422:zamd_7elal4" action="/home">
+  			<input type="hidden" name="cx" value="000872085005376217422:zamd_7elal4" />
+  			<input type="hidden" name="p" value="google" />
+  			<input type="hidden" name="cof" value="FORID:11" />
+  			<input name="q" type="text" size="9" style="font-size: 14px; font-weight: bolder; margin-left: -2px;" value="" />
+  			<input type="submit" name="sa" value="Go" />
+  	  </form>
+  	  <a href="/forums/index.php?app=core&module=search" style="text-decoration: none;"><span style="font-size: 11px; color: #CCCCCC; font-weight: bold; text-decoration: underline;">Advanced Forum Search</span></a>
+  	</div> -->
+  	<div class="tutorials" style="margin-top: -15px;">
+   		<h2>Follow & Share</h2>
+		<!-- Place this tag in the <head> of your document -->
+<script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+
+<!-- Place this tag where you want the badge to render -->
+<g:plus href="https://plus.google.com/101741058034586748616" rel="publisher" width="170" height="69" theme="light"></g:plus><br>
+  		<a href="/rss/featured.php" rel="alternate"><img src="http://cdn.dreamincode.net/home/images/feed-icon32x32.png" alt="Dream.In.Code RSS Feed" style="border:0; margin: 2px;" width="32" height="32" /></a>
+  		<a href="http://www.linkedin.com/e/gis/1506187" rel="alternate"><img src="http://cdn.dreamincode.net/home/images/linkedin-icon32x32.png" alt="Dream.In.Code LinkedIn Group" style="border:0; margin: 2px;" width="32" height="32" /></a>
+  		<a href="http://www.twitter.com/dreamincode" rel="alternate"><img src="http://cdn.dreamincode.net/home/images/twitter-icon32x32.png" alt="Follow Us On Twitter" style="border:0; margin: 2px;" width="32" height="32" /></a>
+  		<a href="http://www.facebook.com/pages/DreamInCode/62219401412" rel="alternate"><img src="http://cdn.dreamincode.net/home/images/facebook.png" alt="Fan Us On Facebook" style="border:0; margin: 2px;" width="32" height="32" /></a>
+  <!-- 		<script type="text/javascript">
+  			document.write('<a rel="nofollow" href="http://del.icio.us/post?url=http://www.dreamincode.net&title=Dream.In.Code Programming Community" title="Bookmark This to del.icio.us"><img src="http://cdn.dreamincode.net/home/images/80727937.png" alt="delicious" height="16" width="16" style="margin-left: 2px;" /></a>');
+  			document.write('<a rel="nofollow" href="http://digg.com/submit?phase=2&url='+encodeURIComponent(location.href)+'" title="Digg This!"><img src="http://cdn.dreamincode.net/home/images/89072042.png" alt="digg" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Google"><img src="http://cdn.dreamincode.net/home/images/10847106.png" alt="google" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow"  href="http://www.newsvine.com/_tools/seed&save?u='+encodeURIComponent(location.href)+'&h='+encodeURIComponent(document.title)+'" title="Bookmark to Newsvine" ><img src="http://cdn.dreamincode.net/home/images/27563199.png" alt="newsvine" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://reddit.com/submit? url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Add to reddit"><img src="http://cdn.dreamincode.net/home/images/10796749.png" alt="reddit" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.spurl.net/spurl.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Spurl This!"><img src="http://cdn.dreamincode.net/home/images/67105361.png" alt="spurl" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://technorati.com/faves?add='+encodeURIComponent(location.href)+'" title="Add to Technorati Favorites" ><img src="http://cdn.dreamincode.net/home/images/81723336.png" alt="Technorati" height="16" width="16" /></a>');
+  		</script> -->
+		<p><a href="http://feeds.feedburner.com/dic_featured"><img src="http://feeds.feedburner.com/~fc/dic_featured?bg=FF9900&amp;fg=000000&amp;anim=1" height="26" width="88" style="border:0; margin-top: 2px; margin-left: 3px;" alt="" /></a></p>
+  		<!-- google_ad_section_end -->
+
+
+<!--		<h2>Give It A Try!</h2>
+<div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="ros" lqm_format="160x250"></div>-->
+
+		
+
+
+		<!-- <h2>Celebrate &amp; Win!</h2>
+		<a href="http://www.dreamincode.net/forums/topic/247091-dreamincode-10th-birthday500k-members-contest/"><img src="http://cdn.dreamincode.net/home/images/10yr_170x200.jpg"></a> -->
+  		
+<h2><a href="http://www.dreamincode.net/forums/showforum78.htm">Tutorials</a></h2>
+<h3>Programming</h3>
+<ul>
+	<li><a class="menu" href="/forums/showforum48.htm">C++ Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum50.htm">Java Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum51.htm">VisualBasic Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum92.htm">VB.NET Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum85.htm">C# Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum47.htm">PHP Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum49.htm">ColdFusion Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum87.htm">Database Tutorials</a></li>
+</ul>
+			
+<h3>Web Development</h3>
+<ul>
+	<li><a class="menu" href="/forums/showforum56.htm">HTML Tutorials</a></li>		
+	<li><a class="menu" href="/forums/showforum56.htm">JavaScript Tutorials</a></li>		
+	<li><a class="menu" href="/forums/showforum57.htm">CSS Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum58.htm">Flash Tutorials</a></li>
+	<li><a class="menu" href="/forums/showforum44.htm">Photoshop Tutorials</a></li>
+</ul>
+
+  
+  		<h2>Reference Sheets</h2>
+  		<a href="/forums/showtopic17947.htm"><img src="http://cdn.dreamincode.net/home/images/refsheets5.png" height="157" width="151"></a>
+  
+  		<h2><a href="http://www.dreamincode.net/code">Code Snippets</a></h2>
+<ul>
+
+
+							 <li><a href="/forums/forum/206-c-snippets/" title="">C Snippets</a></li>
+														 <li><a href="/forums/forum/208-c-snippets/" title="">C++ Snippets</a></li>
+														 <li><a href="/forums/forum/209-java-snippets/" title="">Java Snippets</a></li>
+														 <li><a href="/forums/forum/210-visual-basic-snippets/" title="For VB6 and older versions. Please post VB.NET Snippets in the VB.NET Snippets section.">Visual Basic Snippets</a></li>
+														 <li><a href="/forums/forum/211-c#-snippets/" title="">C# Snippets</a></li>
+														 <li><a href="/forums/forum/212-vbnet-snippets/" title="">VB.NET Snippets</a></li>
+														 <li><a href="/forums/forum/227-aspnet-snippets/" title="">ASP.NET Snippets</a></li>
+														 <li><a href="/forums/forum/213-php-snippets/" title="">PHP Snippets</a></li>
+														 <li><a href="/forums/forum/214-python-snippets/" title="">Python Snippets</a></li>
+														 <li><a href="/forums/forum/215-ruby-snippets/" title="">Ruby Snippets</a></li>
+														 <li><a href="/forums/forum/216-coldfusion-snippets/" title="">ColdFusion Snippets</a></li>
+														 <li><a href="/forums/forum/217-sql-snippets/" title="">SQL Snippets</a></li>
+														 <li><a href="/forums/forum/218-assembly-snippets/" title="">Assembly Snippets</a></li>
+														 <li><a href="/forums/forum/219-functional-programming-snippets/" title="For functional languages such as Lisp, Clojure, Scheme, Erlang, Haskell, OCaml, F#, and others.">Functional Programming Snippets</a></li>
+														 <li><a href="/forums/forum/220-perl-snippets/" title="">Perl Snippets</a></li>
+														 <li><a href="/forums/forum/221-htmlcss-snippets/" title="">HTML/CSS Snippets</a></li>
+														 <li><a href="/forums/forum/222-jvscript-snippets/" title="">J&#097;v&#097;script Snippets</a></li>
+														 <li><a href="/forums/forum/223-flashactionscript-snippets/" title="">Flash/ActionScript Snippets</a></li>
+														 <li><a href="/forums/forum/226-asp-snippets/" title="Classic ASP Code Snippets">ASP Snippets</a></li>
+														 <li><a href="/forums/forum/229-linux-unix-and-bash-snippets/" title="">Linux, Unix, and Bash Snippets</a></li>
+														 <li><a href="/forums/forum/224-other-languages-snippets/" title="For languages without individualized snippets sections">Other Languages Snippets</a></li>
+														 <li><a href="/forums/forum/228-regex/" title="">Regex</a></li>
+							</ul>
+
+
+
+
+  
+  		<!-- google_ad_section_start(weight=ignore) -->
+  		<h2><a rel="nofollow" href="/?p=chat">DIC Chatroom</a></h2>
+  		<ul><li><a rel="nofollow" href="/?p=chat">Join our IRC Chat</a></li></ul>
+  		<h2>Bye Bye Ads</h2>
+  		<a rel="nofollow" href="/forums/index.php?act=paysubs&CODE=index"><img src="http://cdn.dreamincode.net/home/images/dicpp.gif" width="141" height="32"></a>
+  		<!--<h2>Monthly Drawing</h2>
+  		<a href="/forums/index.php?showtopic=19383" rel="nofollow"><img alt="Thumb Drive" width="130" height="77" src="http://cdn.dreamincode.net/home/images/monthlygiveaway.gif"/></a>-->
+   
+            <!-- google_ad_section_end -->
+  	</div>
+</div>
+<div style="padding-left: 50px; position: relative; clear: both;">
+<iframe src="http://www.facebook.com/plugins/likebox.php?id=62219401412&amp;width=300&amp;connections=10&amp;stream=false&amp;header=true&amp;height=287" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:287px;" allowTransparency="true"></iframe>
+</div>
+
+  </div> <!-- /sidebar_inner-->
+</div> <!-- /sidebar -->
+
+
+<!--/ included content-->
+  </div><!--/main_content-->
+
+  <div id="footer">
+    <!--included content-->
+<!-- google_ad_section_start(weight=ignore) -->	
+<br/><br/>
+<div align="center">
+	<strong><a href="/forums/index.php?showannouncement=22">FAQ</a> | <a href="/forums/blog/1081-dreamincode-team-blog/">Team Blog</a> | <a href="/forums/forum/106-site-questions-support/">Feedback/Support</a> | <a href="/downloads/MediaKit.pdf" rel="nofollow">Advertising</a><img src="http://cdn.dreamincode.net/home/images/pdf.gif" border="0" valign="middle"> | <a href="/?p=tos" rel="nofollow">Terms of Use</a> | <a href="/?p=privacy" rel="nofollow">Privacy Policy</a> | <a href="/?p=about" rel="nofollow">About Us</a> 
+</div>
+
+<br/>
+
+
+<br/>
+
+<div align="center">Copyright 2001-2015 <a href="http://www.mediagroup1.com" rel="nofollow"><B>MediaGroup1 LLC</B></a>, All Rights Reserved<br>A <a href="http://www.mediagroup1.com" rel="nofollow"><B>MediaGroup1 LLC</B></a> Production - Version 6.0.2.1.36<br/>Server: secure3</div>
+
+</div>
+
+
+
+
+<script type="text/javascript" src="http://cdn.dreamincode.net/search/thickbox.js?v=2"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAxBW3LKw8ZyeZtMN03GUE6xRxk_aegb5QRd7zBwjGSOCnKEUL-hQ7Ddp4qsRLgRs05uD5XPbK_J-x1w"></script>
+<script type="text/javascript">
+google.load('search', '1',{nocss: true});
+jQuery(document).ready(function() {
+	jQuery("#cse-search-box").submit(function () {
+	var customSearchControl = new google.search.CustomSearchControl('000872085005376217422:zamd_7elal4');
+	customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+	tb_show("Dream.In.Code Search Results - Powered By <img src='http://www.google.com/cse/images/google_custom_search_smwide.gif'>", "#TB_inline?height=480&width=800");
+	var drawOptions = new google.search.DrawOptions();
+	customSearchControl.draw(document.getElementById("TB_ajaxContent"), drawOptions);
+	customSearchControl.execute(document.getElementById("query").value);
+	return false;
+	});
+});
+</script>
+
+
+
+
+<!-- <style>.hilite { background-color: #ff0; }</style>
+<script type="text/javascript" src="http://cdn.dreamincode.net/home/templates2/se_hilite.js"></script>
+ -->
+
+
+<!-- Google Website Optimizer Tracking Script 
+<script type="text/javascript">
+if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+(document.location.protocol=='https:'?'s://ssl':'://www')+
+'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+<script type="text/javascript">
+try {
+var gwoTracker=_gat._getTracker("UA-69851-6");
+gwoTracker._trackPageview("/2514943763/test");
+}catch(err){}</script>
+ End of Google Website Optimizer Tracking Script -->
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-d4Szpdj6xMw-o"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-d4Szpdj6xMw-o.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+
+<script src="http://www.dreamincode.net/mint/?js" type="text/javascript"></script>
+
+<!-- <script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script> -->
+
+<script type='text/javascript'>
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</script>
+
+
+<script type="text/javascript" src="http://track.netshelter.net/js/sites/dreamincode.net.js"></script>
+
+<!-- google_ad_section_end -->	
+
+
+
+<div align=center>
+</div>
+
+<!--/ included content-->
+
+
+
+
+  </div>
+			
+
+<script type="text/javascript" src="http://cdn.dreamincode.net/syntax/scripts/shCore.js?10"></script>
+<script type="text/javascript" src="http://cdn.dreamincode.net/syntax/scripts/shBrushBash.js?10"></script>
+
+
+
+
+
+
+
+
+
+
+	<link type="text/css" rel="stylesheet" href="http://cdn.dreamincode.net/syntax/styles/shCore.css?15"/>
+	<link type="text/css" rel="stylesheet" href="http://cdn.dreamincode.net/syntax/styles/shThemeDefault.css?15"/>
+	<script type="text/javascript">
+                SyntaxHighlighter.config.clipboardSwf = 'http://cdn.dreamincode.net/syntax/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+
+
+  </body>
+</html>

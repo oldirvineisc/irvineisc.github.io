@@ -1,0 +1,151 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+}
+p {
+  font-family: "Maven Pro", sans-serif;
+}
+
+.image-resized {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.footer-image{
+  max-width:100px;
+  max-height: 100px;
+}
+
+
+.theme-text-color{
+  color: #65979D;
+}
+
+.theme-background-color{
+  background-color: #65979D;
+}
+
+.text-color{
+  color: white;
+}
+
+.theme-text-color .form-color{
+  background-color: #65979D;
+}
+
+.icons-resized{
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+@media (min-width: 466px) and (max-width: 531px) {
+  h1.large {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 465px){
+h1.large {
+  font-size: 16px;
+  font-weight: 500px;
+}
+}
+
+@media (max-width: 391px){
+h1.large {
+  font-size: 14px;
+  font-weight: 500px;
+}
+}
+
+@media (max-width: 367px){
+h1.indian-club-resize {
+  font-size: 24px;
+  font-weight: 500px;
+}
+
+h1.subcont-resize {
+  font-size: 8px;
+  font-weight: 500px;
+}
+}
+
+.indian-font {
+
+  font-family: 'SAMARN__.TTF';
+}
+
+/*section {
+    background-color: #FF9933;
+}*/
+
+/*footer.footer-1.bg-dark {
+
+    background-color: #128807;
+}*/
+
+/*!
+ * Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+
+/*START STYLES - ALI*/
+
+
+
+@font-face {
+    font-family: "SAMARN__.TTF";
+    src: url("../fonts/samarkan/SAMARN__.TTF");
+}
+
+.indian-font {
+  color: #666;
+  font-family: 'SAMARN__.TTF';
+}
+
+.indian-font-no-color {
+  font-family: 'SAMARN__.TTF';
+  color: #47b475;
+
+}
+
+
+/*CAROUSEL STYLES OVERRIDES*/
+
+.carousel-control {
+  width: 7%;
+  opacity: .2;
+}
+
+.carousel-width {
+  width: 90%
+}
+
+
+/*END STYLES OVERRIDES*/
+
+input[type="submit"] {
+      border: 2px solid #65979D;
+}
+
+
+/*Landing Page font*/
+@font-face {
+    font-family: "mixolydian titling bd.ttf";
+    src: url("../fonts/mixolydian-titling/mixolydian titling bd.ttf");
+}
+.landing-font {
+  font-family: 'mixolydian titling bd.ttf';
+}
+
+/*END STYLES - ALI*/

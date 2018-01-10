@@ -1,0 +1,9 @@
+{
+  "firebase": "irvineisc",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

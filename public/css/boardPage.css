@@ -1,0 +1,35 @@
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+}
+p {
+  font-family: "Maven Pro", sans-serif;
+}
+.title {
+  padding-top: 15px;
+}
+.navbar-brand {
+    font-family: "Kaushan Script", cursive;
+    font-size: 30px;
+}
+.main-container {
+    text-align: center;
+}
+#myCarousel {
+  min-height: 500px;
+}
+.carousel-content {
+    display: flex;
+    align-items: center;
+}
+#aboutus {
+  min-height: 900px;
+}
+#aboutus p {
+  font-size: 18px;
+  line-height: 1.75;
+}
+section {
+    min-height: 700px;
+    background-position: 50% 0%;
+}
